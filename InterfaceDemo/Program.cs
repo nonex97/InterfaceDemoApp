@@ -51,6 +51,13 @@ namespace InterfaceDemo
             powereds.Add(battery);
             powereds.Add(batteryKeyboard);
 
+            List<IRun> runningMammals = new List<IRun>();
+            Person person = new Person();
+            Animal animal = new Animal();
+
+            runningMammals.Add(person);
+            runningMammals.Add(animal);
+
             Console.ReadLine();
         }
     }
@@ -113,5 +120,20 @@ namespace InterfaceDemo
     public class BatteryPoweredGameController : GameController, IBatteryPowered // the interfaces are also inherited
     {
         public int BatteryLevel { get; set; } // a unique property to battery powered game controller
+    }
+
+    public interface IRun
+    {
+
+    }
+
+    public class Person : IRun
+    {
+
+    }
+
+    public class Animal : IRun
+    {
+
     }
 }
